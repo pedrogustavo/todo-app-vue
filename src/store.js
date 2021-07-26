@@ -3,30 +3,21 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+const updateStorage = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+
 export default new Vuex.Store({
     state: {
-        tasks: [
-            {
-                id: 1,
-                value: 'Instalar vue-cli',
-                completed: true
-            },
-            {
-                id: 2,
-                value: 'Criar componentes na aplicação',
-                completed: true
-            },
-            {
-                id: 3,
-                value: 'Adicionar vue-router',
-                completed: false
-            },
-            {
-                id: 4,
-                value: 'Adicionar vuex',
-                completed: false
-            }
-        ] 
+        tasks: localStorage.getItem('tasks') 
+            ? JSON.parse(localStorage.getItem('tasks'))
+            : [
+                {
+                    id: 1,
+                    value: 'Instalar vue-cli',
+                    completed: true
+                }
+            ]        
     },
     mutations: {
         toggleCompletedTask (state, id) {
@@ -34,16 +25,22 @@ export default new Vuex.Store({
                 if (item.id === id) item.completed = !item.completed
                 return item
             })
+            updateStorage('tasks', state.tasks)
         },
         addNewTask (state, task) {
-            state.tasks.push({
-                id: state.tasks.length + 1,
-                value: task,
-                completed: false
-            })
+            state.tasks = [
+                ...state.tasks,
+                {
+                    id: state.tasks.length + 1,
+                    value: task,
+                    completed: false
+                }
+            ]
+            updateStorage('tasks', state.tasks)
         },
         removeItem (state, id) {
             state.tasks = state.tasks.filter(item => item.id !== id)
+            updateStorage('tasks', state.tasks)
         }
     },
     actions: {

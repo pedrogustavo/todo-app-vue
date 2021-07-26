@@ -21,7 +21,6 @@ export default {
             this.$emit('toggleItem', id)
         },
         removeItem (item) {
-            console.log('click')
             this.$emit('removeItem', item)
         }
     }
