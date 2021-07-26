@@ -1,7 +1,12 @@
 <template>
-    <li class="list-item" :class="{ 'completed': item.completed }" @click="toggleItem(item.id)">
-        <Icon :name="item.completed ? 'check' : 'circle'" />
-        <p>{{ item.value }}</p>
+    <li class="list-item" :class="{ 'completed': item.completed }">
+        <div class="list-item-content" @click="toggleItem(item.id)">
+            <Icon :name="item.completed ? 'check' : 'circle'" />
+            <p>{{ item.value }}</p>
+        </div>
+        <button class="list-item-remove" @click="removeItem(item)">
+            <Icon name="times" />
+        </button>
     </li>
 </template>
 <script>
@@ -13,7 +18,11 @@ export default {
     props: ['item'],
     methods: {
         toggleItem (id) {
-            this.$emit('itemID', id)
+            this.$emit('toggleItem', id)
+        },
+        removeItem (item) {
+            console.log('click')
+            this.$emit('removeItem', item)
         }
     }
 }

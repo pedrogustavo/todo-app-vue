@@ -2,7 +2,13 @@
     <div class="state">
         <div id="container">
             <ul id="list">
-                <ListItem v-for="(item, index) in tasks" :key="index" :item="item" @itemID="toggleItem" />
+                <ListItem 
+                    v-for="(item, index) in tasks"
+                    :key="index"
+                    :item="item"
+                    @toggleItem="toggleItem"
+                    @removeItem="removeItem"
+                />
             </ul>
             <div id="new-item-box">
                 <form @submit.prevent="addItem">
@@ -44,6 +50,10 @@ export default {
                 this.$store.dispatch('ADD_ITEM', this.newItem)
                 this.newItem = ''
             }
+        },
+        removeItem (item) {
+            const confirmResult = window.confirm(`Tem certeza que deseja remover: "${item.value}" ?`)
+            if (confirmResult) this.$store.dispatch('REMOVE_ITEM', item.id)
         }
     }
 }

@@ -41,6 +41,9 @@ export default new Vuex.Store({
                 value: task,
                 completed: false
             })
+        },
+        removeItem (state, id) {
+            state.tasks = state.tasks.filter(item => item.id !== id)
         }
     },
     actions: {
@@ -49,6 +52,9 @@ export default new Vuex.Store({
         },
         ADD_ITEM ({ commit }, task) {
             commit('addNewTask', task)
+        },
+        REMOVE_ITEM ({ commit }, id) {
+            commit('removeItem', id)
         }
     },
     getters: {

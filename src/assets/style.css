@@ -16,10 +16,16 @@ body {
 }
 
 .list-item {
-    margin-bottom: 10px;
     align-items: center;
     cursor: pointer;
     display: flex;
+    justify-content: space-between;
+    padding: 4px 2px;
+    transition: 0.4s;
+}
+
+.list-item:hover {
+    background-color: #23242d;
 }
 
 .list-item p {
@@ -35,6 +41,22 @@ body {
 .list-item .icon {
     width: 16px;
     margin-right: 5px;
+}
+
+.list-item-content {
+    display: flex;
+}
+
+.list-item-remove {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.list-item-remove .icon {
+    width: 14px;
+    margin-left: 10px;
+    color: #93939b;
 }
 
 #new-item-box {
