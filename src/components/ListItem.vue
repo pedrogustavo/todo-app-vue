@@ -1,6 +1,6 @@
 <template>
     <li class="list-item" :class="{ 'completed': item.completed }" @click="toggleItem(item.id)">
-        <Icon :completed="item.completed" />
+        <Icon :name="item.completed ? 'check' : 'circle'" />
         <p>{{ item.value }}</p>
     </li>
 </template>

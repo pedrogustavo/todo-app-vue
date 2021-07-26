@@ -41,7 +41,7 @@ export default {
                 },
                 {
                     id: 3,
-                    value: 'Fazer apresentação',
+                    value: 'Adicionar vuex',
                     completed: true
                 }
             ],
