@@ -7,8 +7,14 @@ body {
 
 #container {
     margin: auto;
-    max-width: 50%;
+    max-width: 60%;
     padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    #container {
+        max-width: 80%;
+    }
 }
 
 #list {
@@ -59,12 +65,10 @@ body {
     color: #93939b;
 }
 
-#new-item-box {
-    display: flex;
-}
 
 #new-item-box input[type="text"] {
     max-width: 80%;
+    width: 100%;
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
