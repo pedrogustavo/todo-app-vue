@@ -6,6 +6,8 @@ Os dados _são salvos no localStorage, então mesmo que seja feito um refresh da
 
 URL para acessar a aplicação: https://pedrogustavo.github.io/todo-app-vue/
 
+![To do app preview](src/assets/to-do-app.png)
+
 ## Rodando o projeto local
 Para rodar o projeto, basta acessar a raiz e instalar as dependências utilizando:
 ```
