@@ -1,5 +1,5 @@
 # todo-app-vue
-To-do list funcional feito em vue.js.
+To-do list funcional feito em vue.js. [Veja a mesma aplicação feita em react](https://github.com/pedrogustavo/todo-app-react)
 
 Aplicação simples onde você pode adicionar, remover e concluir tarefas. **Uma aplicação 100% funcional e pronta para o uso.**   
 Os dados _são salvos no localStorage, então mesmo que seja feito um refresh da tela ou feche o browser seus dados não serão perdidos pois ficam salvos no seu browser._
