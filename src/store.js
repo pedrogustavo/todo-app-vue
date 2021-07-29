@@ -39,7 +39,12 @@ export default new Vuex.Store({
             updateStorage('tasks', state.tasks)
         },
         removeItem (state, id) {
-            state.tasks = state.tasks.filter(item => item.id !== id)
+            state.tasks = state.tasks
+                .filter(item => item.id !== id)
+                .map((item, index) => {
+                    item.id = index
+                    return item
+                })
             updateStorage('tasks', state.tasks)
         }
     },
