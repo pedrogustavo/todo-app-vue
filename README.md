@@ -9,7 +9,7 @@ URL para acessar a aplicação: https://pedrogustavo.github.io/todo-app-vue/
 ![To do app preview](src/assets/to-do-app.png)
 
 ## Rodando o projeto local
-Para rodar o projeto, basta acessar a raiz e instalar as dependências utilizando:
+Para rodar o projeto, basta acessar o diretório raiz e instalar as dependências utilizando:
 ```
 npm install
 ```
